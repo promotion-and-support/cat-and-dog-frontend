@@ -6,7 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'src/app/common/server', 'src/app/common/types.ts', 'src/app/local'] },
   {
     settings: { react: { version: '18.3' } },
     extends: [js.configs.recommended, ...tseslint.configs.recommendedTypeChecked],

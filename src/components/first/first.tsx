@@ -1,17 +1,18 @@
-import { app } from '../../services/app.provider';
+import { appBase } from '../app/app.base.provider';
 import { useStyles } from './first.styles';
 
 export const FirstComponent = () => {
   const { root } = useStyles();
-  const s = app.firstService.useState(['status', 'inFirst', 'outFirst']);
+  const s = appBase.firstService.useState(['status', 'value']);
+
+  const handleClick = () => {
+    appBase.firstService.firstMethod().catch(() => {});
+  };
 
   return (
     <div className={root}>
-      <div>FIRST COMPONENT</div>
-      <div>{s.status}</div>
-      <div>{s.inFirst}</div>
-      <div>{s.outFirst}</div>
-      <button onClick={() => app.firstService.firstMethod()}>set inFirst</button>
+      <div>{s.value}</div>
+      <button onClick={handleClick}>TEST</button>
     </div>
   );
 };

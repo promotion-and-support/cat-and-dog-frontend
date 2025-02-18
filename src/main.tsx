@@ -1,9 +1,9 @@
 import { createRoot } from 'react-dom/client';
-import { AppProvider } from './services/app.provider';
+import { AppBaseProvider } from './components/app/app.base.provider';
 import { App } from './components/app/app';
 
 createRoot(document.getElementById('root')!).render(
-  <AppProvider>
+  <AppBaseProvider>
     <App />
-  </AppProvider>
+  </AppBaseProvider>
 );

@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import { useStyles } from "./app.styles"
-import { useAppContext } from "../../services/app.provider";
+import { useAppBaseContext } from "./app.base.context";
 import { FirstComponent } from "../first/first"
-import { SecondComponent } from "../second/second";
-import { ThirdComponent } from "../third/third";
-import { NewComponent } from "../new/new";
+import { useStyles } from "./app.styles"
 
 export const App = () => {
   const { root } = useStyles();
-  const app = useAppContext();
+  const app = useAppBaseContext();
   const { status } = app.useState(['status']);
 
   useEffect(() => {
@@ -26,10 +23,6 @@ export const App = () => {
   return (
     <div className={root}>
       <FirstComponent />
-      <SecondComponent />
-      <ThirdComponent />
-      <NewComponent />
     </div>
-    );
-
+  );
 };

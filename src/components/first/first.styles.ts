@@ -5,5 +5,8 @@ export const useStyles = createUseStyles({
     background: '#bb5555',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
   }
 }, { name: 'First' });
