@@ -1,3 +1,6 @@
+todo*
+.env.local
+
 # Logs
 logs
 *.log
