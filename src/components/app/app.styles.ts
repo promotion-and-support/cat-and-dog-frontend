@@ -6,5 +6,6 @@ export const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
+    flexDirection: 'column',
   }
 }, { name: 'App' });
