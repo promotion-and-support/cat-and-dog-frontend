@@ -217,8 +217,8 @@ export class Store<
         clearTimeout(timer);
         if (timer) {
           timer = undefined;
-        } else if (this.loading)  {
-          handleStart()
+        } else if (this.loading) {
+          handleStart();
         } else {
           handleStop();
         }

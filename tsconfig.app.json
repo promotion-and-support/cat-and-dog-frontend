@@ -26,7 +26,20 @@
     //
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["lib/*"]
+      "@lib/*": ["lib/*"],
+      "@client/*": ["src/app/common/client/*"],
+      "@server/*": ["src/app/common/server/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@styles/*": ["src/styles/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"]
+      // "@constants/*": ["constants/*"],
+      // "@router/*": ["router/*"],
+      // "@app/*": ["app/*"],
     }
   },
   "include": ["src", "lib"]

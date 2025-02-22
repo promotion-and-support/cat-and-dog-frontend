@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export class EventEmitter {
   private events: Record<string, ((data: any) => void)[]> = {};
 

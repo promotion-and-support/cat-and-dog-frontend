@@ -5,5 +5,5 @@ import { App } from './components/app/app';
 createRoot(document.getElementById('root')!).render(
   <AppBaseProvider>
     <App />
-  </AppBaseProvider>
+  </AppBaseProvider>,
 );

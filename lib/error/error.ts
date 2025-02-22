@@ -10,7 +10,10 @@ export const createErrorClass = <T extends string>() => {
       return new ErrorClass(key, { cause: e });
     }
 
-    constructor(public key: ErrorKey<T>  = 'UNKNOWN', options: Parameters<ErrorConstructor>[1]) {
+    constructor(
+      public key: ErrorKey<T> = 'UNKNOWN',
+      options: Parameters<ErrorConstructor>[1],
+    ) {
       super(key, options);
     }
   };

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export const isChanged = <T extends object>(keys: (keyof T)[], first: T | undefined, second: T) => {
   if (!keys.length || !first) {
     return true;

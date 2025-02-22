@@ -37,7 +37,7 @@ export const FirstComponent = () => {
         <button onClick={remove}>Remove account</button>
       </div>
       <div className={clsInfo}>
-          <pre>{info}</pre>
+        <pre>{info}</pre>
       </div>
     </>
   );

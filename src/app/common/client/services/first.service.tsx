@@ -1,10 +1,7 @@
 import { Store } from '@lib/store/store';
 import { delay } from '@lib/utils';
 import { IAppBase } from '../app.base';
-
-const { DEV, VITE_INIT_DATA } = import.meta.env
-const INIT_DATA = DEV ? VITE_INIT_DATA as string: '';
-const API_URL = (import.meta.env.VITE_API_URL || window.location.origin) as string;
+import { API_URL, INIT_DATA } from '@constants/constants';
 
 interface IFirstState {
   data: Record<string, string> | string;
@@ -19,7 +16,10 @@ const ENDPOINT = {
 };
 
 export class FirstService extends Store<IFirstState> {
-  constructor(initialState: IFirstState, protected app: IAppBase) {
+  constructor(
+    initialState: IFirstState,
+    protected app: IAppBase,
+  ) {
     super(initialState, undefined, 'INIT');
   }
 
@@ -27,7 +27,7 @@ export class FirstService extends Store<IFirstState> {
     await delay(1000);
     this.setState({ status: 'READY' });
   }
-  
+
   async health() {
     this.error = null;
     const url = new URL(ENDPOINT.health, API_URL);
@@ -54,7 +54,7 @@ export class FirstService extends Store<IFirstState> {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-      const data = await response.json() as Record<string, string>;
+      const data = (await response.json()) as Record<string, string>;
       this.setState({ data });
     } catch (e) {
       this.setError(e);
@@ -75,7 +75,7 @@ export class FirstService extends Store<IFirstState> {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-      const data = await response.json() as Record<string, string>;
+      const data = (await response.json()) as Record<string, string>;
       this.setState({ data });
     } catch (e) {
       this.setError(e);
