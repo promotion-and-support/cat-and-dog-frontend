@@ -13,6 +13,7 @@ export default defineConfig({
       '@contexts': '/src/contexts',
       '@constants': '/src/constants',
       '@hooks': '/src/hooks',
+      '@router': '/src/router',
       '@services': '/src/services',
       '@styles': '/src/styles',
       '@utils': '/src/utils',

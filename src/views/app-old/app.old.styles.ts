@@ -9,5 +9,5 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
     },
   },
-  { name: 'App' },
+  { name: 'AppOld' },
 );

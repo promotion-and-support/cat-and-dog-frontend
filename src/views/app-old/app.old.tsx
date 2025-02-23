@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useAppBaseContext } from './app.base.context';
-import { FirstComponent } from '../first/first';
-import { useStyles } from './app.styles';
+import { useAppBaseContext } from '@components/app/app.base.context';
+import { FirstComponent } from '@components/first/first';
+import { useStyles } from './app.old.styles';
 
 export const AppOld = () => {
   const { root } = useStyles();

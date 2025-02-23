@@ -6,22 +6,15 @@ import { ErrorBoundary } from '@components/error/error.boundary';
 import { Theme } from '@styles/theme';
 import { NavigateProvider } from '@contexts/navigate/navigate';
 import { Layout } from '@components/layout/layout';
-import { AppOld } from './app.old';
 import { ModalSet } from '@components/modal/modal.set';
 import { Loading } from '@components/loading/loading';
-// import { ErrorCatch } from '@components/error/error.catch';
-// import { Content } from '@components/content/content';
-// import { Router } from '@router/router';
+import { ErrorCatch } from '@components/error/error.catch';
+import { Content } from '@components/content/content';
+import { Router } from '@router/router';
 
 export const App: FC = () => {
   // useApp();
   // useTelegram();
-  // return (
-  //               <ErrorCatch />
-  //               <Content>
-  //                 <Router />
-  //               </Content>
-  // );
   return (
     <ErrorBoundary level="app">
       <Theme>
@@ -31,7 +24,10 @@ export const App: FC = () => {
               <Layout>
                 <ModalSet />
                 <Loading />
-                <AppOld />
+                <ErrorCatch />
+                <Content>
+                  <Router />
+                </Content>
               </Layout>
             </NavigateProvider>
           </HashRouter>
