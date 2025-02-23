@@ -1,22 +1,13 @@
 import { FC } from 'react';
 import { RoutesMap } from '@constants/router.constants';
-import { PROJECT_NAME } from '@constants/constants';
-// import { useMenuItems } from '@hooks/useMenuItems';
+import { useMenuItems } from '@hooks/useMenuItems';
 import { IconButton } from '@components/buttons/icon.button/icon.button';
 import { Button } from '@components/buttons/button/button';
 import { useStyles } from './header.styles';
 
 export const Header: FC = () => {
-  const { root, titleButton, button, icon } = useStyles();
-  // const { name, href, eventsCount, openMainMenu, openNetMenu, showBackBtn } = useMenuItems();
-  const { name, href, eventsCount, openMainMenu, openNetMenu, showBackBtn } = {
-    name: PROJECT_NAME,
-    href: 'href',
-    eventsCount: 0,
-    openMainMenu: () => {},
-    openNetMenu: undefined,
-    showBackBtn: false,
-  };
+  const { root, titleButton, button } = useStyles();
+  const { name, href, openMainMenu, showBackBtn } = useMenuItems();
 
   return (
     <div className={root}>
@@ -30,14 +21,6 @@ export const Header: FC = () => {
       <Button href={href} btnType="text" className={titleButton}>
         {name}
       </Button>
-      {openNetMenu && (
-        <IconButton
-          icon="net"
-          onClick={openNetMenu}
-          className={button}
-          classNameIcon={eventsCount ? icon : undefined}
-        />
-      )}
     </div>
   );
 };

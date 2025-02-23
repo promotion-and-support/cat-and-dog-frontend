@@ -7,9 +7,9 @@ import { Theme } from '@styles/theme';
 import { NavigateProvider } from '@contexts/navigate/navigate';
 import { Layout } from '@components/layout/layout';
 import { AppOld } from './app.old';
+import { ModalSet } from '@components/modal/modal.set';
+import { Loading } from '@components/loading/loading';
 // import { ErrorCatch } from '@components/error/error.catch';
-// import { ModalSet } from '@components/modal/modal.set';
-// import { Loading } from '@components/loading/loading';
 // import { Content } from '@components/content/content';
 // import { Router } from '@router/router';
 
@@ -17,8 +17,6 @@ export const App: FC = () => {
   // useApp();
   // useTelegram();
   // return (
-  //               <ModalSet />
-  //               <Loading />
   //               <ErrorCatch />
   //               <Content>
   //                 <Router />
@@ -31,6 +29,8 @@ export const App: FC = () => {
           <HashRouter>
             <NavigateProvider>
               <Layout>
+                <ModalSet />
+                <Loading />
                 <AppOld />
               </Layout>
             </NavigateProvider>
