@@ -12,7 +12,7 @@ export const useStyles = createUseStyles(
       borderRadius: 5,
       color: 'white',
       fontWeight: 'bold',
-      fontSize: '1.5em',
+      fontSize: '1.2em',
       '& button': {
         width: '100%',
         margin: 10,
@@ -23,7 +23,6 @@ export const useStyles = createUseStyles(
       height: 100,
       margin: 20,
       textWrap: 'wrap',
-      color: 'white',
     },
   },
   { name: 'First' },

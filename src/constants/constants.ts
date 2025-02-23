@@ -1,3 +1,4 @@
+export const PROJECT_NAME = 'CAT & DOG';
 export const ROOT_TITLE = 'не в спільноті';
 export const IS_DEV = import.meta.env.DEV;
 export const USE_TG = import.meta.env.VITE_USE_TG === 'true';

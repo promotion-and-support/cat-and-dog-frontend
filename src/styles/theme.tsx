@@ -2,14 +2,10 @@ import { FC, PropsWithChildren } from 'react';
 import Jss, { ThemeProvider } from 'react-jss';
 import { mixins } from './mixins';
 
+import { useCssBaseline } from './hooks/useCssBaseline';
 import { palette } from './palette';
 import { vars } from './vars';
-import { useCssBaseline } from './hooks/useCssBaseline';
-
-const BREAKPOINT_MEDIA_QUERY = {
-  maxWidth: '(max-width: 100px)',
-  minHeight: '(max-height: 100px)',
-};
+import { BREAKPOINT_MEDIA_QUERY } from './breakpoints';
 
 export const getBreakpointQueries = () => {
   const breakpointQueries = { ...BREAKPOINT_MEDIA_QUERY };
