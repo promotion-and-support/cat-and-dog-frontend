@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { FC, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MessagesMap } from '@constants/messages';
@@ -9,7 +8,7 @@ import {
 } from '@client/connection/errors';
 import { modalService } from '@services/modal.service';
 import { useNavigateTo } from '@hooks/useNavigateTo';
-// import { useAppError } from '@hooks/useAppError';
+import { useAppError } from '@hooks/useAppError';
 import { NotFound } from '@views/not.found/not.found';
 
 const STATUS_TO_MESSAGES_MAP: Record<HttpResponseErrorCode, string> = {
@@ -26,7 +25,7 @@ const showError = (statusCode: HttpResponseErrorCode) =>
   modalService.showError(STATUS_TO_MESSAGES_MAP[statusCode]);
 
 export const ErrorCatch: FC = () => {
-  const error: any = null; // useAppError();
+  const error = useAppError();
   const navigate = useNavigateTo();
   const { pathname } = useLocation();
 

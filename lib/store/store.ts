@@ -15,7 +15,7 @@ export class Store<
 > {
   protected $state: State;
 
-  protected events = new EventEmitter();
+  events = new EventEmitter();
 
   protected loading = false;
 

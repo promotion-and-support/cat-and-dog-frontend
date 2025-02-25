@@ -1,7 +1,5 @@
 import { FC } from 'react';
 import { HashRouter } from 'react-router-dom';
-// import { useApp } from '@hooks/useApp';
-// import { useTelegram } from '@hooks/useTelegram';
 import { ErrorBoundary } from '@components/error/error.boundary';
 import { Theme } from '@styles/theme';
 import { NavigateProvider } from '@contexts/navigate/navigate';
@@ -13,8 +11,6 @@ import { Content } from '@components/content/content';
 import { Router } from '@router/router';
 
 export const App: FC = () => {
-  // useApp();
-  // useTelegram();
   return (
     <ErrorBoundary level="app">
       <Theme>

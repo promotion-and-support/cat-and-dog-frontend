@@ -1,12 +1,11 @@
 import { FC, PropsWithChildren, useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-// import { useAppStatus } from '@hooks/useAppStatus';
-// import { AppStatus } from '@client/constants';
+import { useAppReady } from '@hooks/useAppReady';
 import { useStyles } from './content.styles';
 
 export const Content: FC<PropsWithChildren> = ({ children }) => {
   const { root, animation } = useStyles();
-  const isInit = false; // useAppStatus() === AppStatus.INITING;
+  const isReady = useAppReady();
   const ref = useRef<HTMLDivElement>(null);
   const { key } = useLocation();
 
@@ -29,7 +28,7 @@ export const Content: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className={root} ref={ref} onAnimationEnd={handleAnimation}>
-      {!isInit && children}
+      {isReady && children}
     </div>
   );
 };

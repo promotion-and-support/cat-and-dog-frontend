@@ -16,11 +16,8 @@ const ENDPOINT = {
 };
 
 export class FirstService extends Store<IFirstState> {
-  constructor(
-    initialState: IFirstState,
-    protected app: IAppBase,
-  ) {
-    super(initialState, undefined, 'INIT');
+  constructor(protected app: IAppBase) {
+    super({ data: '' }, undefined, 'INIT');
   }
 
   async init() {
