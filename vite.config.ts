@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -7,7 +7,17 @@ export default defineConfig({
   resolve: {
     alias: {
       '@lib': '/lib',
+      '@client': '/src/app/common/client',
+      '@server': '/src/app/common/server',
+      '@components': '/src/components',
+      '@contexts': '/src/contexts',
+      '@constants': '/src/constants',
+      '@hooks': '/src/hooks',
+      '@router': '/src/router',
+      '@services': '/src/services',
+      '@styles': '/src/styles',
+      '@utils': '/src/utils',
+      '@views': '/src/views',
     },
   },
 });
-
