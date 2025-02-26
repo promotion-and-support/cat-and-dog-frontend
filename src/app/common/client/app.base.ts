@@ -1,6 +1,5 @@
 import { Store } from '@lib/store/store';
 import { getApi, IClientApi } from '@server/client.api';
-import { FirstService } from './services/first.service';
 import { getConnection as getHttpConnection } from './connection/http';
 import { getConnection as getWsConnection } from './connection/ws';
 import { HttpResponseError } from './connection/errors';
@@ -10,14 +9,12 @@ import { Account } from './services/account.service';
 export interface IAppBase {
   api: IClientApi;
   account: Account;
-  firstService: FirstService;
 }
 
 export class AppBase extends Store implements IAppBase {
   private baseUrl = API_URL;
   api: IClientApi;
   account: Account = new Account(this);
-  firstService: FirstService = new FirstService(this);
 
   constructor() {
     super({}, undefined, 'INIT');
@@ -49,7 +46,6 @@ export class AppBase extends Store implements IAppBase {
 
     try {
       await this.account.init();
-      await this.firstService.init();
       this.setState({ status: 'READY' });
     } catch (e: any) {
       this.setError(e);

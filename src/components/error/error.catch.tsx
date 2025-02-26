@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { MessagesMap } from '@constants/messages';
 import {
   HttpResponseErrorCode,
@@ -7,7 +6,7 @@ import {
   isHttpResponseError,
 } from '@client/connection/errors';
 import { modalService } from '@services/modal.service';
-import { useNavigateTo } from '@hooks/useNavigateTo';
+// import { useNavigateTo } from '@hooks/useNavigateTo';
 import { useAppError } from '@hooks/useAppError';
 import { NotFound } from '@views/not.found/not.found';
 
@@ -26,8 +25,7 @@ const showError = (statusCode: HttpResponseErrorCode) =>
 
 export const ErrorCatch: FC = () => {
   const error = useAppError();
-  const navigate = useNavigateTo();
-  const { pathname } = useLocation();
+  // const navigate = useNavigateTo();
 
   useEffect(() => {
     if (!error) return;
@@ -36,8 +34,7 @@ export const ErrorCatch: FC = () => {
     else statusCode = httpResponseErrorEnum.InternalServerError;
     if (statusCode === httpResponseErrorEnum.NotFound) return;
     if (statusCode === httpResponseErrorEnum.Unauthorized) {
-      localStorage.setItem('pathname', pathname);
-      navigate.toIndex();
+      // navigate.toIndex();
     }
     showError(statusCode);
     // eslint-disable-next-line react-hooks/exhaustive-deps

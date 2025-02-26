@@ -7,7 +7,6 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      background: '#15aa15',
       padding: 20,
       borderRadius: 5,
       color: 'white',
@@ -20,9 +19,7 @@ export const useStyles = createUseStyles(
       },
     },
     info: {
-      height: 100,
       margin: 20,
-      textWrap: 'wrap',
     },
   },
   { name: 'First' },
