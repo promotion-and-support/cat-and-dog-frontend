@@ -1,6 +1,6 @@
 import { MessagesMap } from '@constants/messages';
 import { modalService } from '@services/modal.service';
-import { appBase } from '../app/app.base.provider';
+import { app } from '../app/app.provider';
 import { useStyles } from './first.styles';
 
 const showRemoveSuccess = () => modalService.showMessage(MessagesMap.ACCOUNT_DELETED);
@@ -9,17 +9,17 @@ const showFail = () => modalService.showError('Fail');
 
 export const FirstComponent = () => {
   const { root, info: clsInfo } = useStyles();
-  const { user } = appBase.account.useState(['user']);
+  const { user } = app.account.useState(['user']);
 
   const health = () => {
-    appBase.api
+    app.api
       .health()
       .then((data) => modalService.showMessage(data))
       .catch(() => {});
   };
 
   const create = () => {
-    appBase.account
+    app.account
       .signupTg()
       .then((data) => {
         if (data) showSuccess();
@@ -29,7 +29,7 @@ export const FirstComponent = () => {
   };
 
   const login = () => {
-    appBase.account
+    app.account
       .login()
       .then((data) => {
         if (data) showSuccess();
@@ -39,7 +39,7 @@ export const FirstComponent = () => {
   };
 
   const logout = () => {
-    appBase.account
+    app.account
       .logoutOrRemove('logout')
       .then((data) => {
         if (data) showSuccess();
@@ -49,7 +49,7 @@ export const FirstComponent = () => {
   };
 
   const remove = () => {
-    appBase.account
+    app.account
       .logoutOrRemove('remove')
       .then((data) => {
         if (data) showRemoveSuccess();

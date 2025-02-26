@@ -37,7 +37,6 @@ export const ErrorCatch: FC = () => {
       // navigate.toIndex();
     }
     showError(statusCode);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   if (!isHttpResponseError(error)) return null;

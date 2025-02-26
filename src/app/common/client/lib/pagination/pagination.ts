@@ -1,4 +1,4 @@
-import { Store } from '@lib/store/store';
+import { Store } from '../store/store';
 import { IPaginationState } from './pagination.types';
 import { PAGINATION_INITIAL_STATE } from './pagination.constants';
 

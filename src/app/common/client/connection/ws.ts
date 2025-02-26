@@ -1,4 +1,4 @@
-import { EventEmitter } from '@lib/event-emitter/event.emitter';
+import { EventEmitter } from '../lib/event-emitter/event.emitter';
 import { TPromiseExecutor } from '../../types';
 import { IWsResponse, TFetch } from './types';
 import {

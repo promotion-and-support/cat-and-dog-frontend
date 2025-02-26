@@ -1,7 +1,7 @@
-import * as T from '@server/types/types';
-import { IAppBase } from '@client/app.base';
-import { Store } from '@lib/store/store';
-import { INIT_DATA } from '@constants/constants';
+import { INIT_DATA } from '../../../local/imports';
+import * as T from '../../server/types/types';
+import { Store } from '../lib/store/store';
+import { IApp } from '../app';
 
 interface AccountState {
   user: T.IUserResponse;
@@ -10,7 +10,7 @@ interface AccountState {
 export class Account extends Store<AccountState> {
   private tg: WebApp;
 
-  constructor(private app: IAppBase) {
+  constructor(private app: IApp) {
     super({ user: null }, undefined, 'INIT');
 
     const { initData } = Telegram.WebApp;

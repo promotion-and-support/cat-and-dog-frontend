@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { EventEmitter } from '@lib/event-emitter/event.emitter';
-import { createErrorClass, ErrorClass, ErrorInstance } from '@lib/error/error';
-import { ServiceErrorClass, ServiceErrorInstance } from '@lib/error/service.error';
-import { isChanged, toConsole } from '@lib/utils';
+import { EventEmitter } from '../event-emitter/event.emitter';
+import { createErrorClass, ErrorClass, ErrorInstance } from '../error/error';
+import { ServiceErrorClass, ServiceErrorInstance } from '../error/service.error';
+import { isChanged, toConsole } from '../utils';
 import { IStatusProps, IFullState, StoreStatusKey } from './store.types';
 
 export class Store<

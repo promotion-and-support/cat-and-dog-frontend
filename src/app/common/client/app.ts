@@ -1,17 +1,17 @@
-import { Store } from '@lib/store/store';
-import { getApi, IClientApi } from '@server/client.api';
+import { getApi, IClientApi } from '../server/client.api';
+import { API_URL } from '../../local/imports';
+import { Store } from './lib/store/store';
 import { getConnection as getHttpConnection } from './connection/http';
 import { getConnection as getWsConnection } from './connection/ws';
 import { HttpResponseError } from './connection/errors';
-import { API_URL } from '@constants/constants';
 import { Account } from './services/account.service';
 
-export interface IAppBase {
+export interface IApp {
   api: IClientApi;
   account: Account;
 }
 
-export class AppBase extends Store implements IAppBase {
+export class App extends Store implements IApp {
   private baseUrl = API_URL;
   api: IClientApi;
   account: Account = new Account(this);

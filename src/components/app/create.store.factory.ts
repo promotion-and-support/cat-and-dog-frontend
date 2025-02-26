@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
-import { Store } from './store/store';
+import { Store } from '@client/lib/store/store';
 
 const storage = new Map<{ new (...args: any[]): any }, Map<string, any>>();
 
