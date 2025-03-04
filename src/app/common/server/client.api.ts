@@ -53,13 +53,20 @@ export const getApi = (
       },
     },
   },
-  'subscription': {
-    'get': () => fetch<Q.TSubscriptionGetResponse>('/subscription/get'),
+  'bot': {
+    'message': () => fetch<boolean>('/bot/message'),
 
-    'update': (options: Q.TSubscriptionUpdate) =>
+  },
+  'subscription': {
+    'get': () => fetch<P.IGetSubscription>('/subscription/get'),
+
+    'update': (options: P.IUpdateSubscription) =>
       fetch<boolean>('/subscription/update', options),
 
-    'remove': () => fetch<boolean>('/subscription/remove'),
+    'remove': (options: Q.TSubscriptionRemove) =>
+      fetch<boolean>('/subscription/remove', options),
+
+    'sending': () => fetch<boolean>('/subscription/sending'),
 
   },
   'user': {

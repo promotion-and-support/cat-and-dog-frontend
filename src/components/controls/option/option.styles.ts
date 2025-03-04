@@ -7,7 +7,7 @@ export const useStyles = createUseStyles(
       justifyContent: 'space-between',
       alignItems: 'center',
       fontSize: vars.fontSize.L,
-      padding: '10px 0',
+      padding: '5px 0',
       '& label': {
         color: palette.first.main,
       },

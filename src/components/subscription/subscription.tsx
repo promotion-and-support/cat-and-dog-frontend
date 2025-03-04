@@ -1,27 +1,30 @@
 import { useStyles } from './subscription.styles';
 import { Button } from '@components/buttons/button/button';
-import { Option } from '@components/controls/option/option';
-import { OPTIONS, useSubscription } from './useSubscription';
+import { useSubscription } from './useSubscription';
+import { SubscriptionSubjectKeys } from '@server/types/subscription.types';
+import { Subject } from './subject/subject';
 
 export const Subscription = () => {
   const { root } = useStyles();
-  const { update, remove, type } = useSubscription();
+  const { update, remove, subscriptions } = useSubscription();
 
-  const optionsJsx = OPTIONS.map((it) => (
-    <Option
-      key={it.value.type}
-      id={it.value.type}
-      label={it.title}
-      value={it.value}
-      onChange={update}
-      checked={it.value.type === type}
+  const subjectsJsx = Object.entries(subscriptions).map(([subject, types]) => (
+    <Subject
+      key={subject}
+      subject={subject as SubscriptionSubjectKeys}
+      types={types}
+      update={update}
     />
   ));
 
+  const enabled = Object.values(subscriptions).reduce((acc, it) => {
+    return acc || Object.values(it).reduce((acc2, it2) => acc2 || it2, false);
+  }, false);
+
   return (
     <div className={root}>
-      {optionsJsx}
-      <Button type="button" btnType="telegram" onClick={remove} disabled={!type}>
+      {subjectsJsx}
+      <Button type="button" btnType="telegram" onClick={() => remove()} disabled={!enabled}>
         unsubscribe
       </Button>
     </div>

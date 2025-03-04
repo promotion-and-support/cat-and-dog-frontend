@@ -9,33 +9,29 @@ import { app } from '../app/app.provider';
 const showSuccess = () => modalService.showMessage('Success');
 // const showFail = () => modalService.showError('Fail');
 
-export const OPTIONS: { title: string; value: IUpdateSubscription }[] = [
-  { title: 'Choose option 1', value: { type: 'ON_UPDATE' } },
-  { title: 'Choose option 2', value: { type: 'ONE_WEEK' } },
-  { title: 'Choose option 3', value: { type: 'TWO_WEEK' } },
-  { title: 'Choose option 4', value: { type: 'ONE_MONTH' } },
-];
-
 export const useSubscription = () => {
-  const { subscription } = app.subscription.useState(['subscription']);
-  const type = subscription?.type;
+  const { subscriptions } = app.subscription.useState(['subscriptions']);
 
-  const update: OptionProps<IUpdateSubscription>['onChange'] = useCallback((v, checked) => {
-    if (!checked) {
-      return;
-    }
+  const remove = useCallback((subscription?: IUpdateSubscription) => {
     app.subscription
-      .update(v)
+      .remove(subscription)
       .then(showSuccess)
       .catch(() => {});
   }, []);
 
-  const remove = useCallback(() => {
-    app.subscription
-      .remove()
-      .then(showSuccess)
-      .catch(() => {});
-  }, []);
+  const update: OptionProps<IUpdateSubscription>['onChange'] = useCallback(
+    (v, checked) => {
+      if (!checked) {
+        app.subscription
+          .update(v)
+          .then(showSuccess)
+          .catch(() => {});
+      } else {
+        remove(v);
+      }
+    },
+    [remove],
+  );
 
-  return { update, remove, type };
+  return { update, remove, subscriptions };
 };
