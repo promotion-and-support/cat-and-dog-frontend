@@ -11,7 +11,7 @@ export const useStyles = createUseStyles(
     },
     title: {
       color: palette.add.main,
-      fontSize: vars.fontSize.main,
+      fontSize: vars.fontSize.L,
     },
   }),
   { name: 'Subject' },

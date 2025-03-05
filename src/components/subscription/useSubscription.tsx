@@ -21,7 +21,7 @@ export const useSubscription = () => {
 
   const update: OptionProps<IUpdateSubscription>['onChange'] = useCallback(
     (v, checked) => {
-      if (!checked) {
+      if (checked) {
         app.subscription
           .update(v)
           .then(showSuccess)

@@ -6,7 +6,7 @@ export const useStyles = createUseStyles(
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      fontSize: vars.fontSize.L,
+      fontSize: vars.fontSize.M,
       padding: '5px 0',
       '& label': {
         color: palette.first.main,
