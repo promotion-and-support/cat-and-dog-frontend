@@ -33,6 +33,9 @@ export const useStyles = createUseStyles(
         fontSize: vars.fontSize.M,
         lineHeight: vars.lineHeight.dense,
       },
+      '&:disabled': {
+        opacity: 0.5,
+      },
     },
   }),
   {
