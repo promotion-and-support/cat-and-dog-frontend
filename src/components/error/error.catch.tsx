@@ -7,7 +7,7 @@ import {
 } from '@client/connection/errors';
 import { modalService } from '@services/modal.service';
 // import { useNavigateTo } from '@hooks/useNavigateTo';
-import { useAppError } from '@hooks/useAppError';
+import { useApiError } from '@hooks/useApiError';
 import { NotFound } from '@views/not.found/not.found';
 
 const STATUS_TO_MESSAGES_MAP: Record<HttpResponseErrorCode, string> = {
@@ -24,7 +24,7 @@ const showError = (statusCode: HttpResponseErrorCode) =>
   modalService.showError(STATUS_TO_MESSAGES_MAP[statusCode]);
 
 export const ErrorCatch: FC = () => {
-  const error = useAppError();
+  const error = useApiError();
   // const navigate = useNavigateTo();
 
   useEffect(() => {
