@@ -5,7 +5,7 @@ import { useStyles } from './loading.styles';
 
 export const Loading: FC = () => {
   const { root, icon } = useStyles();
-  const loading = app.apiService.useLoading(200, 0);
+  const loading = app.apiService.useLoading(200, 200);
 
   if (!loading) return null;
 

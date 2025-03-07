@@ -14,22 +14,27 @@ interface SubjectProps {
 }
 
 const SUBJECTS: Record<SubscriptionSubjectKeys, string> = {
-  REPORT: 'Reports',
-  URGENT: 'Urgent news',
+  REPORT: 'Звіти за період та поточні потреби',
+  URGENT: 'Термінові новини та оголошення',
 };
 
 const TYPES: Record<SubscriptionTypeKeys, string> = {
-  ON_UPDATE: 'On update',
-  ONE_WEEK: 'Once a week',
-  TWO_WEEK: 'Once two weeks',
-  ONE_MONTH: 'Once a month',
+  ON_UPDATE: 'Відразу',
+  ONE_WEEK: 'Щотижня',
+  TWO_WEEK: 'Раз на два тижні',
+  ONE_MONTH: 'Щомісяця',
 };
 
 export const Subject: FC<SubjectProps> = (props) => {
   const { root, title } = useStyles();
-  const { subject, types, update } = props;
+  const { subject, update } = props;
 
-  const optionsJsx = Object.entries(types).map(([type, checked]) => (
+  let types = Object.entries(props.types);
+  if (subject === 'URGENT') {
+    types = types.filter(([type]) => type === 'ON_UPDATE');
+  }
+
+  const optionsJsx = types.map(([type, checked]) => (
     <Option
       key={type}
       id={`${subject}-${type}`}

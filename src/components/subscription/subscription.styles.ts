@@ -7,7 +7,7 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
       alignItems: 'strech',
       '& button': {
-        margin: 20,
+        margin: '40px 20px',
         width: 'initial',
       },
     },

@@ -7,7 +7,7 @@ export const useStyles = createUseStyles(
       flexDirection: 'column',
       alignItems: 'strech',
       padding: 20,
-      paddingTop: 0,
+      paddingBottom: 0,
     },
     title: {
       color: palette.add.main,
