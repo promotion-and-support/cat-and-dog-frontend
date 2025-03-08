@@ -12,8 +12,8 @@ import { NotFound } from '@views/not.found/not.found';
 
 const STATUS_TO_MESSAGES_MAP: Record<HttpResponseErrorCode, string> = {
   400: MessagesMap.BAD_REQUEST,
-  401: MessagesMap.UNAUTHORIZED,
-  403: MessagesMap.FORBIDDEN,
+  401: MessagesMap.BAD_REQUEST, // MessagesMap.UNAUTHORIZED,
+  403: MessagesMap.BAD_REQUEST, // MessagesMap.FORBIDDEN,
   404: 'Not found',
   409: 'Conflict',
   500: MessagesMap.SERVER_ERROR,
@@ -33,9 +33,9 @@ export const ErrorCatch: FC = () => {
     if (isHttpResponseError(error)) statusCode = error.statusCode;
     else statusCode = httpResponseErrorEnum.InternalServerError;
     if (statusCode === httpResponseErrorEnum.NotFound) return;
-    if (statusCode === httpResponseErrorEnum.Unauthorized) {
-      // navigate.toIndex();
-    }
+    // if (statusCode === httpResponseErrorEnum.Unauthorized) {
+    //   navigate.toIndex();
+    // }
     showError(statusCode);
   }, [error]);
 
