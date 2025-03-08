@@ -3,7 +3,7 @@ import { Subscription } from '@components/subscription/subscription';
 
 export const SubscriptionView = () => {
   return (
-    <FormContainer title="SUBSCRIPTION">
+    <FormContainer title="ПІДПИСКА НА ПОВІДОМЛЕННЯ">
       <Subscription />
     </FormContainer>
   );

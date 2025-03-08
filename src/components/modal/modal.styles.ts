@@ -7,6 +7,10 @@ export const useStyles = createUseStyles(
       position: 'fixed',
       margin: '0 auto',
       zIndex: vars.zIndex.modal,
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      paddingBottom: 120,
       '&.closing': {
         '& $modal': {
           transform: 'translateY(-100%)',

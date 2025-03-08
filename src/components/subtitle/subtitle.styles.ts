@@ -8,6 +8,7 @@ export const useStyles = createUseStyles(
       color: palette.font.first,
       margin: `${vars.gap.M} 0`,
       textTransform: 'uppercase',
+      textAlign: 'center',
     },
   }),
   { name: 'Subtitle' },

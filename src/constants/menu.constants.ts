@@ -9,10 +9,4 @@ export const MENU_ITEMS: IMenuItem[] = [
     icon: 'about',
     allowForUser: 'NOT_LOGGEDIN',
   },
-  {
-    label: 'Акаунт',
-    href: RoutesMap.ACCOUNT.INDEX,
-    icon: 'account',
-    allowForUser: 'NOT_CONFIRMED',
-  },
 ];

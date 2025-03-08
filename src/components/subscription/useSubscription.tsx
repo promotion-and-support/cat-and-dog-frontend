@@ -1,13 +1,12 @@
 import { useCallback } from 'react';
 import { IUpdateSubscription } from '@server/types/subscription.types';
-// import { MessagesMap } from '@constants/messages';
+import { MessagesMap } from '@constants/messages';
 import { modalService } from '@services/modal.service';
 import { OptionProps } from '@components/controls/option/option';
 import { app } from '../app/app.provider';
 
-// const showRemoveSuccess = () => modalService.showMessage(MessagesMap.ACCOUNT_DELETED);
-const showSuccess = () => modalService.showMessage('Success');
-// const showFail = () => modalService.showError('Fail');
+const showUpdateSuccess = () => modalService.showMessage(MessagesMap.SUBSCRIPTION_UPDATE_SUCCES);
+const showRemoveSuccess = () => modalService.showMessage(MessagesMap.SUBSCRIPTION_REMOVE_SUCCES);
 
 export const useSubscription = () => {
   const { subscriptions } = app.subscription.useState(['subscriptions']);
@@ -15,7 +14,7 @@ export const useSubscription = () => {
   const remove = useCallback((subscription?: IUpdateSubscription) => {
     app.subscription
       .remove(subscription)
-      .then(showSuccess)
+      .then(showRemoveSuccess)
       .catch(() => {});
   }, []);
 
@@ -24,7 +23,7 @@ export const useSubscription = () => {
       if (checked) {
         app.subscription
           .update(v)
-          .then(showSuccess)
+          .then(showUpdateSuccess)
           .catch(() => {});
       } else {
         remove(v);
