@@ -25,7 +25,7 @@ export const Subscription = () => {
     <div className={root}>
       {subjectsJsx}
       <Button type="button" btnType="telegram" onClick={() => remove()} disabled={!enabled}>
-        unsubscribe
+        скасувати підписку
       </Button>
     </div>
   );

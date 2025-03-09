@@ -6,9 +6,9 @@ import {
   isHttpResponseError,
 } from '@client/connection/errors';
 import { modalService } from '@services/modal.service';
-// import { useNavigateTo } from '@hooks/useNavigateTo';
 import { useApiError } from '@hooks/useApiError';
 import { NotFound } from '@views/not.found/not.found';
+import { app } from '@components/app/app.provider';
 
 const STATUS_TO_MESSAGES_MAP: Record<HttpResponseErrorCode, string> = {
   400: MessagesMap.BAD_REQUEST,
@@ -25,6 +25,8 @@ const showError = (statusCode: HttpResponseErrorCode) =>
 
 export const ErrorCatch: FC = () => {
   const error = useApiError();
+  const { status } = app.useStatus(['status']);
+  const isReady = status === 'READY';
   // const navigate = useNavigateTo();
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export const ErrorCatch: FC = () => {
   }, [error]);
 
   if (!isHttpResponseError(error)) return null;
-  if (error.statusCode === httpResponseErrorEnum.NotFound) return <NotFound />;
+  if (error.statusCode === httpResponseErrorEnum.NotFound && isReady) return <NotFound />;
 
   return null;
 };
