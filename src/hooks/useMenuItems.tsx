@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { USER_STATUS_MAP } from '@server/types/types';
 import { MENU_ITEMS } from '@constants/menu.constants';
 import { RoutesMap } from '@constants/router.constants';
-import { ROOT_TITLE } from '@constants/constants';
 import { getMenuItems } from '@utils/menu.utils';
 import { modalService } from '@services/modal.service';
 // import { useUser } from '@hooks/useUser';
@@ -23,12 +22,11 @@ export const useMenuItems = () => {
     [mainMenuItems],
   );
 
-  const showBackBtn = href !== pathname;
+  const showBackBtn = pathname !== href;
   const showMainMenu = USER_STATUS_MAP[userStatus] < USER_STATUS_MAP.INVITING || undefined;
 
   return {
-    name: ROOT_TITLE,
-    href: ROOT,
+    href,
     openMainMenu: showMainMenu && openMainMenu,
     showBackBtn,
   };

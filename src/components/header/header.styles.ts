@@ -13,23 +13,6 @@ export const useStyles = createUseStyles(
     titleButton: {
       flex: '1 0 0',
     },
-    button: {
-      width: 'auto',
-      height: 'auto',
-      padding: 0,
-      color: palette.font.light,
-    },
-    hidden: {
-      display: 'none',
-    },
-    icon: {
-      height: '100%',
-      color: palette.font.second,
-      animationName: 'light',
-      animationIterationCount: 'infinite',
-      animationTimingFunction: 'linear',
-      animationDuration: vars.transition.XL,
-    },
   }),
   { name: 'Header' },
 );
