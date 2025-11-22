@@ -1,13 +1,10 @@
 import { Classes } from 'jss';
 
-export const useCombineStyles = <T extends keyof any>(
-  first: Classes<T>,
-  second?: Partial<Classes<T>>,
-) => {
+export const combineStyles = (first: Classes, second?: Partial<Classes>): Classes => {
   if (!second) return first;
   const combined = { ...first };
   Object.keys(combined).forEach((key) => {
-    const cls = key as T;
+    const cls = key;
     if (!second[cls]) return;
     combined[cls] = `${first[cls]} ${second[cls]}`;
   });

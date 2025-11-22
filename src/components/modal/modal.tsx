@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useCallback, useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { mergeClasses } from '@styles/utils/mergeClasses';
+import { combineStyles } from '@styles/utils/combineStyles';
 import { modalService } from '@services/modal.service';
 import { Icon } from '@components/icon/icon';
 import { ModalProps } from './modal.types';
@@ -16,7 +16,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
     classes,
   } = props;
   const baseClasses = useStyles();
-  const { root, backdrop, modal, closeBtn, backdropBtn } = mergeClasses(baseClasses, classes);
+  const { root, backdrop, modal, closeBtn, backdropBtn } = combineStyles(baseClasses, classes);
   const [state, setState] = useState<'closed' | 'opened' | 'closing'>('closed');
 
   const closeHandler = useCallback(

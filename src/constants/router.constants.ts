@@ -42,41 +42,6 @@ export const RelativeRoutesMap = {
         },
       },
     },
-    // NET: {
-    //   INDEX: 'net',
-    //   CREATE: 'create',
-    //   INVITE: 'invite/:token',
-    //   NET_ID: {
-    //     INDEX: ':net_id',
-    //     GOAL: 'goal',
-    //     RULES: 'rules',
-    //     INFO: 'info',
-    //     BOARD: 'board',
-    //     CREATE: 'create',
-    //     LEAVE: 'leave',
-    //     CHAT: 'chat',
-    //     WAITING: 'waiting',
-    //     CIRCLE: {
-    //       INDEX: 'circle',
-    //       INFO: 'info',
-    //       USER: 'user',
-    //       CHAT: 'chat',
-    //       NODE_ID: {
-    //         INDEX: ':node_id',
-    //       },
-    //     },
-    //     TREE: {
-    //       INDEX: 'tree',
-    //       USER: 'user',
-    //       CHAT: 'chat',
-    //       INFO: 'info',
-    //       NODE_ID: {
-    //         INDEX: ':node_id',
-    //         INVITE: 'invite',
-    //         CONNECTED: 'connected',
-    //       },
-    //     },
-    //   },
   },
 };
 

@@ -30,12 +30,12 @@ export const MENU_ITEMS: IMenuItem[] = [
 ];
 
 export const MENU_TREE_ITEMS: IMenuItem[] = [
-  {
-    label: 'Інфо',
-    href: RoutesMap.NET.NET_ID.TREE.INFO,
-    icon: 'about',
-    allowForUser: 'INSIDE_NET',
-  },
+  // {
+  //   label: 'Інфо',
+  //   href: RoutesMap.NET.NET_ID.TREE.INFO,
+  //   icon: 'about',
+  //   allowForUser: 'INSIDE_NET',
+  // },
   // {
   //   label: 'Чат',
   //   href: RoutesMap.NET.NET_ID.TREE.CHAT,
