@@ -15,7 +15,15 @@ export const App: FC = () => {
     <ErrorBoundary level="app">
       <Theme>
         <ErrorBoundary level="router">
-          <HashRouter>
+          <HashRouter
+            future={{
+              v7_startTransition: false,
+              v7_relativeSplatPath: false,
+              // v7_normalizeFormMethod: false,
+              // v7_partialHydration: false,
+              // v7_skipActionErrorRevalidation: false,
+            }}
+          >
             <NavigateProvider>
               <Layout>
                 <ModalSet />

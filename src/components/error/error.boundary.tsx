@@ -1,4 +1,4 @@
-import React, { ErrorInfo, PropsWithChildren } from 'react';
+import { Component, ErrorInfo, PropsWithChildren } from 'react';
 
 interface Props {
   level: string;
@@ -9,7 +9,7 @@ interface State {
   error: Error | null;
 }
 
-export class ErrorBoundary extends React.Component<PropsWithChildren<Props>, State> {
+export class ErrorBoundary extends Component<PropsWithChildren<Props>, State> {
   constructor(props: Props) {
     super(props);
     this.state = { hasError: false, error: null };

@@ -17,7 +17,7 @@
 
     /* Linting */
     "strict": true,
-    // "noUnusedLocals": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
@@ -27,7 +27,7 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["lib/*"],
-      // "@app/*": ["src/app/*"],
+      "@app/*": ["src/components/app/*"],
       "@client/*": ["src/app/common/client/*"],
       "@server/*": ["src/app/common/server/*"],
       "@components/*": ["src/components/*"],

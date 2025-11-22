@@ -6,6 +6,7 @@ import { SubscriptionView } from '@views/subscription/subscription';
 import { About } from '@views/about/about';
 import { Contacts } from '@views/contacts/contacts';
 import { Help } from '@views/help/help';
+import { NetRouter } from './routes/net.router';
 
 export const Router: FC = () => {
   return (
@@ -15,6 +16,7 @@ export const Router: FC = () => {
       <Route path={RelativeRoutesMap.CONTACTS} element={<Contacts />} />
       <Route path={RelativeRoutesMap.HELP} element={<Help />} />
       {/* {AccountRouter} */}
+      {NetRouter}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

@@ -1,4 +1,5 @@
 export * from './db.types';
+export * from './net.types';
 export {
   createEnumFromMap, createEnumFromArray,
 } from '../../utils/transform.utils';

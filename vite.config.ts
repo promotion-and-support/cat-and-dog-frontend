@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@lib': '/lib',
+      '@app': '/src/components/app',
       '@client': '/src/app/common/client',
       '@server': '/src/app/common/server',
       '@components': '/src/components',

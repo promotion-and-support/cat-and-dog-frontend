@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles(
-  () => ({
+  {
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -11,6 +11,6 @@ export const useStyles = createUseStyles(
         width: 'initial',
       },
     },
-  }),
+  },
   { name: 'Subscription' },
 );

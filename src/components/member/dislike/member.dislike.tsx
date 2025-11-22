@@ -1,0 +1,28 @@
+import { FC, useCallback, MouseEvent } from 'react';
+import clsx from 'clsx';
+import { MemberStatusKeys } from '@server/constants';
+
+import { useStyles } from './member.dislike.styles';
+
+interface MemberDislikeProps {
+  nodeId: number;
+  memberStatus: MemberStatusKeys;
+  dislike: boolean | null;
+}
+
+export const MemberDislike: FC<MemberDislikeProps> = (props) => {
+  const { memberStatus, dislike } = props;
+  const { root, [memberStatus]: status } = useStyles();
+
+  const handleClick = useCallback((e: MouseEvent) => {
+    e.preventDefault();
+    // !dislike && app.net.memberActions.setDislike(nodeId);
+    // dislike && app.net.memberActions.unsetDislike(nodeId);
+  }, []);
+
+  return (
+    <div className={clsx(root, status, { dislike })} onClick={handleClick} aria-hidden="true">
+      <span>DISLIKE</span>
+    </div>
+  );
+};

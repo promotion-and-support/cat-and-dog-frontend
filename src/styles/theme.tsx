@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import Jss, { ThemeProvider } from 'react-jss';
+import { ThemeProvider } from 'react-jss';
 import { mixins } from './mixins';
 
 import { useCssBaseline } from './hooks/useCssBaseline';

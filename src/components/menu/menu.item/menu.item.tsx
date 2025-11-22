@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { IconButton } from '@components/buttons/icon.button/icon.button';
 import { Icon } from '@components/icon/icon';
 import { MenuItemProps } from '../menu.types';

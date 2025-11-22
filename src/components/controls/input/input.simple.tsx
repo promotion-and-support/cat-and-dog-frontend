@@ -1,4 +1,4 @@
-import React, { FC, RefObject } from 'react';
+import { FC, RefObject } from 'react';
 import { useStyles } from './input.styles';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {

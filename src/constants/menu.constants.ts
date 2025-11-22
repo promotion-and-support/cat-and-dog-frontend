@@ -21,4 +21,40 @@ export const MENU_ITEMS: IMenuItem[] = [
     icon: 'message',
     allowForUser: 'NOT_LOGGEDIN',
   },
+  {
+    label: `Net`,
+    href: RoutesMap.NET.INDEX,
+    icon: 'message',
+    allowForUser: 'LOGGEDIN',
+  },
+];
+
+export const MENU_TREE_ITEMS: IMenuItem[] = [
+  {
+    label: 'Інфо',
+    href: RoutesMap.NET.NET_ID.TREE.INFO,
+    icon: 'about',
+    allowForUser: 'INSIDE_NET',
+  },
+  // {
+  //   label: 'Чат',
+  //   href: RoutesMap.NET.NET_ID.TREE.CHAT,
+  //   icon: 'post',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+];
+
+export const MENU_CIRCLE_ITEMS: IMenuItem[] = [
+  // {
+  //   label: 'Інфо',
+  //   href: RoutesMap.NET.NET_ID.CIRCLE.INFO,
+  //   icon: 'about',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+  // {
+  //   label: 'Чат',
+  //   href: RoutesMap.NET.NET_ID.CIRCLE.CHAT,
+  //   icon: 'post',
+  //   allowForUser: 'INSIDE_NET',
+  // },
 ];
