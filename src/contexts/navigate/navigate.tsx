@@ -16,6 +16,7 @@ const getNavigateMap = (navigate: NavigateFunction) => {
     back: () => navigate(-1),
     toIndex: (replace: boolean = false) => navigate(RoutesMap.ROOT, { replace }),
     toAccount: (replace: boolean = false) => navigate(RoutesMap.ACCOUNT.INDEX, { replace }),
+    toWaitNets: (replace: boolean = false) => navigate(RoutesMap.NET.WAIT.INDEX, { replace }),
     toNet: ({ net_id: netId }: { net_id: number }) => ({
       id: (replace: boolean = false, netView = 'tree') =>
         navigate(makeDynamicPathname(netPath, netId), { replace, state: { netView } }),

@@ -1,14 +1,25 @@
 import { FC, useEffect } from 'react';
 import { useStyles } from './net.styles';
+import { app } from '@app/app.provider';
 import { useNavigateTo } from '@hooks/useNavigateTo';
 
 export const Net: FC = () => {
   const { root, content } = useStyles();
   const navigate = useNavigateTo();
+  const { allNets, waitNets } = app.userNets.useState(['allNets']);
+  const [net] = allNets;
 
   useEffect(() => {
-    navigate.to('/net/1');
-  }, [navigate]);
+    console.log({ net });
+    if (!net) {
+      navigate.to('/net/1');
+    } else if (waitNets.length >= 0) {
+      console.log({ toWaitNets: true });
+      navigate.toWaitNets();
+    } else {
+      navigate.to('/net/wait/create/cca1f9f0a4d3743c');
+    }
+  }, [navigate, net, waitNets]);
 
   return (
     <div className={root}>
