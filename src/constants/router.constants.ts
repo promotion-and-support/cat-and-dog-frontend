@@ -22,9 +22,9 @@ export const RelativeRoutesMap = {
       // INFO: 'info',
       // BOARD: 'board',
       // CREATE: 'create',
-      // LEAVE: 'leave',
+      LEAVE: 'leave',
       // CHAT: 'chat',
-      // WAITING: 'waiting',
+      WAITING: 'waiting',
       CIRCLE: {
         INDEX: 'circle',
         INFO: 'info',

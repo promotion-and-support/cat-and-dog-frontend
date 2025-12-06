@@ -29,6 +29,57 @@ export const MENU_ITEMS: IMenuItem[] = [
   },
 ];
 
+export const MENU_INSIDE_NET_ITEMS: IMenuItem[] = [
+  // {
+  //   label: 'Goal',
+  //   href: RoutesMap.NET.NET_ID.GOAL,
+  //   icon: 'goal',
+  //   allowForUser: 'INVITING',
+  // },
+  // {
+  //   label: 'Правила',
+  //   href: RoutesMap.NET.NET_ID.RULES,
+  //   icon: 'rules',
+  //   allowForUser: 'INVITING',
+  // },
+  // {
+  //   label: 'Інфо',
+  //   href: RoutesMap.NET.NET_ID.INFO,
+  //   icon: 'about',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+  // {
+  //   label: 'Board',
+  //   href: RoutesMap.NET.NET_ID.BOARD,
+  //   icon: 'board',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+  // {
+  //   label: 'Створити спільноту',
+  //   href: RoutesMap.NET.NET_ID.CREATE,
+  //   icon: 'create',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+  {
+    label: 'Покинути назавжди',
+    href: RoutesMap.NET.NET_ID.LEAVE,
+    icon: 'remove',
+    allowForUser: 'INVITING',
+  },
+  // {
+  //   label: 'Чат',
+  //   href: RoutesMap.NET.NET_ID.CHAT,
+  //   icon: 'post',
+  //   allowForUser: 'INSIDE_NET',
+  // },
+  {
+    label: 'Запити на вхід до спільноти',
+    href: RoutesMap.NET.NET_ID.WAITING,
+    icon: 'wait',
+    allowForUser: 'INSIDE_NET',
+  },
+];
+
 export const MENU_TREE_ITEMS: IMenuItem[] = [
   // {
   //   label: 'Інфо',

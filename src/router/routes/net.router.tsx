@@ -6,6 +6,8 @@ import { WaitNets } from '@views/net/wait/wait';
 import { WaitCreate } from '@views/net/wait/wait.create';
 import { NetIdIndex } from '@views/net/net.id/net.id.index';
 import { NetId } from '@views/net/net.id/net.id';
+import { NetLeave } from '@views/net/leave/leave';
+import { NetWaiting } from '@views/net/waiting/waiting';
 import { TreeRouter } from './tree.router';
 
 const { NET } = RelativeRoutesMap;
@@ -21,6 +23,8 @@ export const NetRouter = (
     </Route>
     <Route path={NET_ID.INDEX} element={<NetIdIndex />}>
       <Route path="" element={<NetId />} />
+      <Route path={NET_ID.LEAVE} element={<NetLeave />} />
+      <Route path={NET_ID.WAITING} element={<NetWaiting />} />
       {TreeRouter}
     </Route>
   </Route>
