@@ -13,7 +13,6 @@ export const Net: FC = () => {
     if (net) {
       navigate.to('/net/1');
     } else if (waitNets.length >= 0) {
-      console.log({ toWaitNets: true });
       navigate.toWaitNets();
     } else {
       navigate.to('/net/wait/create/cca1f9f0a4d3743c');
