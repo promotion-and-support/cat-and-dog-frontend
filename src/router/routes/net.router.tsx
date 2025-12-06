@@ -5,6 +5,7 @@ import { NetIdIndex } from '@views/net/net.id/net.id.index';
 import { NetId } from '@views/net/net.id/net.id';
 import { WaitNets } from '@views/net/wait/wait';
 import { WaitCreate } from '@views/net/wait/wait.create';
+import { TreeRouter } from './tree.router';
 
 const { NET } = RelativeRoutesMap;
 const { NET_ID } = NET;
@@ -19,6 +20,7 @@ export const NetRouter = (
     </Route>
     <Route path={NET_ID.INDEX} element={<NetIdIndex />}>
       <Route path="" element={<NetId />} />
+      {TreeRouter}
     </Route>
   </Route>
 );

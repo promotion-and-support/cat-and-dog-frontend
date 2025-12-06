@@ -12,6 +12,12 @@ export const makeUrl = (pathToToken: string, token: string) => {
   return url;
 };
 
+export const makeTgUrl = (pathToToken: string, token: string, bot: string) => {
+  const path = makeDynamicPathname(pathToToken, token);
+  const hash = `#${path}`;
+  return `tg://resolve?domain=${bot}&start=path${btoa(hash)}`;
+};
+
 export const makeInnerHtmlWithLinks = (text: string) => {
   const regExp = /(\b|\s)([^<>\s]+:\/\/[^<>\s]+)(\b|\s)/g;
   const tpl = "$1<a href='$2' target='_blank' rel='noopener noreferrer'>$2</a>$3";

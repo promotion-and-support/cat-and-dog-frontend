@@ -10,8 +10,7 @@ export const Net: FC = () => {
   const [net] = allNets;
 
   useEffect(() => {
-    console.log({ net });
-    if (!net) {
+    if (net) {
       navigate.to('/net/1');
     } else if (waitNets.length >= 0) {
       console.log({ toWaitNets: true });
