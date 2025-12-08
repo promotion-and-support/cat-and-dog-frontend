@@ -6,9 +6,11 @@ import { SubscriptionView } from '@views/subscription/subscription';
 import { About } from '@views/about/about';
 import { Contacts } from '@views/contacts/contacts';
 import { Help } from '@views/help/help';
+import { useEvents } from '@hooks/useEvents';
 import { NetRouter } from './routes/net.router';
 
 export const Router: FC = () => {
+  useEvents();
   return (
     <Routes>
       <Route path={RelativeRoutesMap.ROOT} element={<SubscriptionView />} />

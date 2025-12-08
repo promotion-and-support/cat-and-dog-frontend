@@ -20,3 +20,11 @@ export const MenuButton: FC = () => {
     </>
   );
 };
+
+//       {openMainMenu && !showBackBtn && (
+//         <IconButton icon="menu" onClick={openMainMenu} className={button} />
+//       )}
+//       {!openMainMenu && !showBackBtn && (
+//         <IconButton icon="home" href={RoutesMap.ROOT} className={button} />
+//       )}
+//       {showBackBtn && <IconButton icon="arrowLeft" href={href} className={button} />}
