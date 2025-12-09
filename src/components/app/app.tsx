@@ -9,6 +9,7 @@ import { Loading } from '@components/loading/loading';
 import { ErrorCatch } from '@components/error/error.catch';
 import { Content } from '@components/content/content';
 import { Router } from '@router/router';
+import { Redirect } from '@router/redirect';
 
 export const App: FC = () => {
   return (
@@ -33,6 +34,7 @@ export const App: FC = () => {
                   <Router />
                 </Content>
               </Layout>
+              <Redirect />
             </NavigateProvider>
           </HashRouter>
         </ErrorBoundary>

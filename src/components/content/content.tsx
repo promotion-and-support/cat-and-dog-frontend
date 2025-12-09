@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren, useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAppReady } from '@hooks/useAppReady';
-import { Redirect } from '@router/redirect';
 import { useStyles } from './content.styles';
 
 export const Content: FC<PropsWithChildren> = ({ children }) => {
@@ -29,7 +28,6 @@ export const Content: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className={root} ref={ref} onAnimationEnd={handleAnimation}>
-      <Redirect />
       {isReady && children}
     </div>
   );

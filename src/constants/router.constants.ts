@@ -8,6 +8,7 @@ export const RelativeRoutesMap = {
   ACCOUNT: {
     INDEX: 'account',
   },
+  SUBSCRIPTION: 'subscription',
   NET: {
     INDEX: 'net',
     INVITE: 'invite/:token',

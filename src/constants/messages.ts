@@ -4,6 +4,7 @@ export const MessagesMap = {
   SERVER_ERROR: 'Сервіс недоступний',
   SUBSCRIPTION_UPDATE_SUCCES: 'Підписку змінено',
   SUBSCRIPTION_REMOVE_SUCCES: 'Підписку скасовано',
+  NET_COMEOUT_FAIL: 'Не вдалося вийти зі спільноти',
   NET_CONNECTED: 'Ви успішно приєднались до спільноти',
   NET_CONNECT_EXISTS: 'Ви вже є учасником цієї спільноти',
   NET_CONNECT_FAIL: 'Ви маєте бути учасником батьківської спільноти',

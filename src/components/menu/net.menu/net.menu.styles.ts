@@ -15,7 +15,7 @@ export const useStyles = createUseStyles(
         justifyContent: 'end',
         alignItems: 'center',
         color: palette.font.first,
-        background: palette.light.main,
+        // background: palette.light.main,
         border: `${BORDER}px solid ${palette.first.main}`,
         borderRadius: `0 0 ${vars.radius.main} ${vars.radius.main} `,
         padding: `0 calc(${vars.gap.main} - ${BORDER}px)`,

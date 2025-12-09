@@ -22,10 +22,31 @@ export const MENU_ITEMS: IMenuItem[] = [
     allowForUser: 'NOT_LOGGEDIN',
   },
   {
-    label: `Net`,
+    label: 'Підписка',
+    href: RoutesMap.SUBSCRIPTION,
+    icon: 'board',
+    allowForUser: ['LOGGEDIN'],
+  },
+  {
+    label: `Спільнота`,
     href: RoutesMap.NET.INDEX,
-    icon: 'message',
+    icon: 'net',
     allowForUser: 'LOGGEDIN',
+  },
+];
+
+export const MENU_NET_ITEMS: IMenuItem[] = [
+  {
+    label: 'Підписка',
+    href: RoutesMap.SUBSCRIPTION,
+    icon: 'board',
+    allowForUser: ['LOGGEDIN'],
+  },
+  {
+    label: 'Спільнота',
+    href: RoutesMap.NET.INDEX,
+    icon: 'net',
+    allowForUser: ['LOGGEDIN'],
   },
 ];
 
