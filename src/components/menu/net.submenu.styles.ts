@@ -19,16 +19,18 @@ export const useStyles = createUseStyles(
       // transform: 'translateX(-50%)',
 
       display: 'flex',
-      '& button': {
-        opacity: 0.5,
-      },
+      // '& button': {
+      //   opacity: 0.5,
+      // },
       '& button.active': {
         border: '1px solid',
         borderColor: palette.light.main,
         paddingRight: vars.gap.S,
         paddingLeft: vars.gap.S,
-        opacity: 1,
+        // opacity: 1,
         margin: 0,
+        color: palette.first.extraLight,
+        background: palette.font.light,
       },
     },
     section: {

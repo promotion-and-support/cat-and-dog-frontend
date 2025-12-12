@@ -5,10 +5,11 @@ import {
   httpResponseErrorEnum,
   isHttpResponseError,
 } from '@client/connection/errors';
+import { app } from '@components/app/app.provider';
 import { modalService } from '@services/modal.service';
 import { useApiError } from '@hooks/useApiError';
+import { useNavigateTo } from '@hooks/useNavigateTo';
 import { NotFound } from '@views/not.found/not.found';
-import { app } from '@components/app/app.provider';
 
 const STATUS_TO_MESSAGES_MAP: Record<HttpResponseErrorCode, string> = {
   400: MessagesMap.BAD_REQUEST,
@@ -25,9 +26,9 @@ const showError = (statusCode: HttpResponseErrorCode) =>
 
 export const ErrorCatch: FC = () => {
   const error = useApiError();
-  const { status } = app.useStatus(['status']);
-  const isReady = status === 'READY';
-  // const navigate = useNavigateTo();
+  const { status, error: appError } = app.useStatus(['status', 'error']);
+  const isReady = status === 'READY' || appError;
+  const navigate = useNavigateTo();
 
   useEffect(() => {
     if (!error) return;
@@ -35,11 +36,11 @@ export const ErrorCatch: FC = () => {
     if (isHttpResponseError(error)) statusCode = error.statusCode;
     else statusCode = httpResponseErrorEnum.InternalServerError;
     if (statusCode === httpResponseErrorEnum.NotFound) return;
-    // if (statusCode === httpResponseErrorEnum.Unauthorized) {
-    //   navigate.toIndex();
-    // }
+    if (statusCode === httpResponseErrorEnum.Unauthorized) {
+      navigate.toIndex();
+    }
     showError(statusCode);
-  }, [error]);
+  }, [error, navigate]);
 
   if (!isHttpResponseError(error)) return null;
   if (error.statusCode === httpResponseErrorEnum.NotFound && isReady) return <NotFound />;

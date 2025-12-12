@@ -10,8 +10,10 @@ import { ErrorCatch } from '@components/error/error.catch';
 import { Content } from '@components/content/content';
 import { Router } from '@router/router';
 import { Redirect } from '@router/redirect';
+import { useAppReady } from '@hooks/useAppReady';
 
 export const App: FC = () => {
+  const isReady = useAppReady();
   return (
     <ErrorBoundary level="app">
       <Theme>
@@ -30,9 +32,7 @@ export const App: FC = () => {
                 <ModalSet />
                 <Loading />
                 <ErrorCatch />
-                <Content>
-                  <Router />
-                </Content>
+                <Content>{isReady && <Router />}</Content>
               </Layout>
               <Redirect />
             </NavigateProvider>
