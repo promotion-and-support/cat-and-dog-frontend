@@ -8,14 +8,14 @@ export const makeDynamicPathname = (pathname: string, ...ids: (number | string)[
 export const makeUrl = (pathToToken: string, token: string) => {
   const { origin } = window.location;
   const path = makeDynamicPathname(pathToToken, token);
-  const url = `${origin}/#${path}`;
+  const url = `${origin}${path}`;
   return url;
 };
 
 export const makeTgUrl = (pathToToken: string, token: string, bot: string) => {
   const path = makeDynamicPathname(pathToToken, token);
-  const hash = `#${path}`;
-  return `tg://resolve?domain=${bot}&start=path${btoa(hash)}`;
+  const hash = btoa(path);
+  return `tg://resolve?domain=${bot}&start=path${hash}`;
 };
 
 export const makeInnerHtmlWithLinks = (text: string) => {

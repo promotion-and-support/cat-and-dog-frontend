@@ -3,7 +3,7 @@ import { Formik, useFormikContext } from 'formik';
 import { RoutesMap } from '@constants/router.constants';
 import { MessagesMap } from '@constants/messages';
 import { modalService } from '@services/modal.service';
-import { makeUrl } from '@utils/format.utils';
+import { makeTgUrl } from '@utils/format.utils';
 import { app } from '@app/app.provider';
 import { Input } from '@components/controls/input/input';
 import { Button } from '@components/buttons/button/button';
@@ -41,7 +41,8 @@ const MemberInviteCreate: FC = () => {
 };
 
 export const MemberInviteCreateForm = () => {
-  const { member_name: memberName } = app.getState().member!.getMember();
+  const { member, bot } = app.getState();
+  const { member_name: memberName } = member!.getMember();
 
   return (
     <FormikProvider
@@ -54,7 +55,8 @@ export const MemberInviteCreateForm = () => {
           .member!.inviteCreate(values)
           .then(async (token) => {
             if (!token) return showFail();
-            const url = makeUrl(pathToInvite, token);
+            // console.log(makeUrl(pathToInvite, token));
+            const url = makeTgUrl(pathToInvite, token, bot);
             await navigator.clipboard.writeText(url);
             return showSuccess();
           })

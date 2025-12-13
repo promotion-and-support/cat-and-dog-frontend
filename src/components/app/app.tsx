@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from '@components/error/error.boundary';
 import { Theme } from '@styles/theme';
 import { NavigateProvider } from '@contexts/navigate/navigate';
@@ -18,7 +18,7 @@ export const App: FC = () => {
     <ErrorBoundary level="app">
       <Theme>
         <ErrorBoundary level="router">
-          <HashRouter
+          <BrowserRouter
             future={{
               v7_startTransition: false,
               v7_relativeSplatPath: false,
@@ -36,7 +36,7 @@ export const App: FC = () => {
               </Layout>
               <Redirect />
             </NavigateProvider>
-          </HashRouter>
+          </BrowserRouter>
         </ErrorBoundary>
       </Theme>
     </ErrorBoundary>
