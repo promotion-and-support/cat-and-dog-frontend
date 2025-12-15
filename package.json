@@ -1,5 +1,5 @@
 {
-  "name": "@promotion-and-support/cat-and-dog-backend",
+  "name": "@promotion-and-support/cat-and-dog-frontend",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@ngrok/ngrok": "^1.6.1",
     "@types/color": "^3.0.3",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",

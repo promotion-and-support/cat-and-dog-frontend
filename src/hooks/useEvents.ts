@@ -6,7 +6,7 @@ import { modalService } from '@services/modal.service';
 
 export const useEvents = (netView?: NetViewKeys) => {
   const { userNet: net } = app.getState();
-  const [events, setEvents] = useState<IEvents>([]);
+  const [eventStoreEvents, setEventStoreEvents] = useState<IEvents>([]);
 
   const { netEvents } = app.userEvents.useState(['netEvents']);
   const currentEvent = useRef<IEvent | null>(null);
@@ -18,7 +18,7 @@ export const useEvents = (netView?: NetViewKeys) => {
       const eventsStore = eventsMap.get(netId);
       if (!eventsStore) return;
       const showEvents = eventsStore.state.events;
-      setEvents(showEvents);
+      setEventStoreEvents(showEvents);
     },
     [netId],
   );
@@ -29,7 +29,7 @@ export const useEvents = (netView?: NetViewKeys) => {
 
   useEffect(() => {
     if (currentEvent.current) return;
-    const [event] = events;
+    const [event] = eventStoreEvents;
     if (!event) return;
     currentEvent.current = event;
     const { message } = event;
@@ -38,7 +38,7 @@ export const useEvents = (netView?: NetViewKeys) => {
       app.userEvents.confirm(event).catch(() => {});
     };
     modalService.showMessage(message, undefined, undefined, handleClose);
-  }, [events]);
+  }, [eventStoreEvents]);
 
   return null;
 };

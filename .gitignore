@@ -1,5 +1,6 @@
 todo*
 .env.local
+.local
 
 # Logs
 logs
