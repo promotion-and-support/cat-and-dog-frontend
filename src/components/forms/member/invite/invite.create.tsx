@@ -52,7 +52,7 @@ export const MemberInviteCreateForm = () => {
         const { userNet: net } = app.getState();
         if (!net?.goal) return showNotGoal();
         app.net.state
-          .member!.inviteCreate(values)
+          .member!.createInvite(values)
           .then(async (token) => {
             if (!token) return showFail();
             // console.log(makeUrl(pathToInvite, token));

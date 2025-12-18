@@ -10,12 +10,18 @@ export const useStyles = createUseStyles(
       borderColor: palette.first.main,
       paddingLeft: vars.gap.SS,
       paddingRight: vars.gap.SS,
+      '& span': {
+        userSelect: 'text',
+      },
       '&>span:first-child': {
         color: palette.add.main,
       },
       '&>span:last-child': {
         color: palette.second.main,
         userSelect: 'text',
+        fontSize: vars.fontSize.M,
+      },
+      '& button': {
         fontSize: vars.fontSize.M,
       },
     },

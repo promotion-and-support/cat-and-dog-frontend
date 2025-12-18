@@ -10,7 +10,7 @@ export const useStyles = createUseStyles(
       flex: '1 0 0',
       color: palette.font.add,
       fontSize: vars.fontSize.L,
-      fontWeigth: vars.fontWeight.bold,
+      fontWeight: vars.fontWeight.bold,
     },
   }),
   { name: 'WaitList' },
