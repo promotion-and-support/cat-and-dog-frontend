@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { app } from '@app/app.provider';
+import { Icon } from '@components/icon/icon';
 import { useStyles } from './member.title.styles';
 
-export const MemberTitle: FC = () => {
+export const MemberTitle: FC<{ name: string }> = ({ name }) => {
   const { root, avatar } = useStyles();
-  const { member_name: memberName } = app.getState().member!.getMember();
 
   return (
     <div className={root}>
-      <div className={avatar} />
-      {memberName}
+      {/* <div className={avatar} /> */}
+      <Icon icon="avatar" className={avatar} />
+      {name}
     </div>
   );
 };

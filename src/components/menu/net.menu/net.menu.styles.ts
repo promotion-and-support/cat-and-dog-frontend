@@ -5,7 +5,7 @@ const ICON = 24;
 
 export const useStyles = createUseStyles(
   ({ palette, vars, mixins }) => {
-    const height = (Number.parseInt(vars.gap.S, 10) + BORDER) * 2 + ICON;
+    const height = (Number.parseInt(vars.gap.SS, 10) + BORDER) * 2 + ICON;
     return {
       root: {
         height,

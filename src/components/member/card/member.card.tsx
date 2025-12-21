@@ -2,6 +2,7 @@ import { FC, useCallback, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { useNavigateTo } from '@hooks/useNavigateTo';
 import { useMemberCard } from '@hooks/useMemberCard';
+import { Icon } from '@components/icon/icon';
 import { MemberStatus } from '@components/member/status/member.status';
 import { MemberCardProps } from './member.card.types';
 import { MemberDislike } from '../dislike/member.dislike';
@@ -35,7 +36,8 @@ export const MemberCard: FC<MemberCardProps> = (props) => {
 
   return (
     <div className={clsx(root, status)} onClick={handleClick} aria-hidden="true">
-      <div className={avatar} />
+      {/* <div className={avatar} /> */}
+      <Icon icon="avatar" className={avatar} />
       <div className={name}>{memberName}</div>
       <MemberStatus memberStatus={memberStatus} />
       <MemberDislike nodeId={nodeId} memberStatus={memberStatus} dislike={dislike} />

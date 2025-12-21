@@ -4,6 +4,7 @@ import arrowDown from './icons/arrow.down.svg?raw';
 import arrowLeft from './icons/arrow.left.svg?raw';
 import arrowRight from './icons/arrow.right.svg?raw';
 import arrowUp from './icons/arrow.up.svg?raw';
+import avatar from './icons/avatar.svg?raw';
 import board from './icons/board.svg?raw';
 import create from './icons/create.svg?raw';
 import cross from './icons/cross.svg?raw';
@@ -30,6 +31,7 @@ export const ICONS_MAP = {
   arrowLeft,
   arrowRight,
   arrowUp,
+  avatar,
   board,
   create,
   cross,

@@ -3,8 +3,8 @@ import { app } from '@app/app.provider';
 import { useNavigateTo } from './useNavigateTo';
 
 export const useUser = () => {
-  const { userStatus: user } = app.useState(['userStatus']);
-  const { userStatus } = app.getState();
+  const { user } = app.account.useState(['user']);
+  const { userStatus } = app.useState(['userStatus']);
   const navigate = useNavigateTo();
 
   useEffect(() => {
@@ -15,5 +15,5 @@ export const useUser = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  return userStatus;
+  return { user, userStatus };
 };

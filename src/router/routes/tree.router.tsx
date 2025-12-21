@@ -2,7 +2,7 @@ import { Route } from 'react-router-dom';
 import { RelativeRoutesMap } from '@constants/router.constants';
 import { NetViewIndex } from '@views/net.view/net.view.index';
 // import { TreeInfo } from '@views/tree/info/info';
-// import { NetUser } from '@views/member/user/net.user';
+import { NetUser } from '@views/member/user/net.user';
 // import { TreeChat } from '@views/chat/tree.chat';
 import { TreeMemberIndex } from '@views/member/tree/tree.member.index';
 import { TreeMember } from '@views/member/tree/tree.member';
@@ -15,7 +15,7 @@ export const TreeRouter = (
   <Route path={TREE.INDEX} element={<NetViewIndex netView="tree" />}>
     <Route path="" element={<div>TREE ROOT</div>} />
     {/* <Route path={TREE.INFO} element={<TreeInfo />} /> */}
-    {/* <Route path={TREE.USER} element={<NetUser />} /> */}
+    <Route path={TREE.USER} element={<NetUser />} />
     {/* <Route path={TREE.CHAT} element={<TreeChat />} /> */}
     <Route path={TREE.NODE_ID.INDEX} element={<TreeMemberIndex />}>
       <Route path="" element={<TreeMember />} />

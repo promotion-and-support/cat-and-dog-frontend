@@ -19,17 +19,20 @@ export const useStyles = createUseStyles(
       // transform: 'translateX(-50%)',
 
       display: 'flex',
-      // '& button': {
-      //   opacity: 0.5,
-      // },
-      '& button.active': {
+      '& button': {
         border: '1px solid',
         borderColor: palette.light.main,
+      },
+      '& button:not(.active)': {
         paddingRight: vars.gap.S,
         paddingLeft: vars.gap.S,
-        // opacity: 1,
-        margin: 0,
-        color: palette.first.extraLight,
+        margin: '0 4px',
+      },
+      '& button.active': {
+        paddingRight: vars.gap.S,
+        paddingLeft: vars.gap.S,
+        margin: '0 4px',
+        color: palette.first.light,
         background: palette.font.light,
       },
     },

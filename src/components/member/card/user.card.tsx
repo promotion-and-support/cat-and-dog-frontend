@@ -2,6 +2,7 @@ import { FC, useCallback, MouseEvent } from 'react';
 import { NetViewEnum } from '@server/types/types';
 import { useNavigateTo } from '@hooks/useNavigateTo';
 import { app } from '@app/app.provider';
+import { Icon } from '@components/icon/icon';
 import { MemberVote } from '../vote/member.vote';
 import { useStyles } from './member.card.styles';
 
@@ -26,10 +27,11 @@ export const UserCard: FC<NetUserCardProps> = (props) => {
     [navigate, net, netView],
   );
 
-  const userName = user!.name || 'Я';
+  const userName = user!.name ? `Я (${user!.name})` : 'Я';
   return (
     <div className={root} onClick={handleClick} aria-hidden="true">
-      <div className={avatar} />
+      {/* <div className={avatar} /> */}
+      <Icon icon="avatar" className={avatar} />
       <div className={clsName}>{userName}</div>
       <MemberVote
         nodeId={nodeId}

@@ -15,7 +15,7 @@ import { useEventsCount } from './useEventsCount';
 const { ROOT, NET } = RoutesMap;
 
 export const useMenuItems = () => {
-  const userStatus = useUser();
+  const { userStatus } = useUser();
   // const [net, nets] = useNet();
   const [net] = useNet();
   const eventsCount = useEventsCount();

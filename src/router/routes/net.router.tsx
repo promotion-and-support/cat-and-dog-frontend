@@ -9,6 +9,7 @@ import { NetId } from '@views/net/net.id/net.id';
 import { NetLeave } from '@views/net/leave/leave';
 import { NetWaiting } from '@views/net/waiting/waiting';
 import { TreeRouter } from './tree.router';
+import { CircleRouter } from './circle.router';
 
 const { NET } = RelativeRoutesMap;
 const { NET_ID } = NET;
@@ -26,6 +27,7 @@ export const NetRouter = (
       <Route path={NET_ID.LEAVE} element={<NetLeave />} />
       <Route path={NET_ID.WAITING} element={<NetWaiting />} />
       {TreeRouter}
+      {CircleRouter}
     </Route>
   </Route>
 );

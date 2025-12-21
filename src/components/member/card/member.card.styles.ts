@@ -14,7 +14,7 @@ export const useStyles = createUseStyles(
       alignItems: 'center',
       padding: vars.gap.S,
       color: palette.font.add,
-      border: `1px solid ${palette.add.main}`,
+      border: `1px solid ${palette.first.light}`,
       borderRadius: vars.radius.S,
       background: palette.light.main,
       cursor: 'pointer',
@@ -23,9 +23,10 @@ export const useStyles = createUseStyles(
     },
     avatar: {
       gridArea: 'avatar',
-      ...mixins.size(42),
-      border: `1px solid ${palette.add.main}`,
-      borderRadius: 100,
+      ...mixins.size(54),
+      // border: `1px solid ${palette.add.main}`,
+      // borderRadius: 100,
+      color: palette.first.extraLight,
     },
     name: {
       gridArea: 'name',
